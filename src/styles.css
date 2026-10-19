@@ -63,6 +63,21 @@ canvas {
   color: #e4dfd4;
 }
 
+.ui-link {
+  font: 12px system-ui, sans-serif;
+  color: #968f87;
+  background: rgba(22, 19, 19, 0.7);
+  border: 1px solid #4a4440;
+  border-radius: 3px;
+  padding: 3px 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.ui-link:hover {
+  color: #e4dfd4;
+}
+
 @media (max-height: 500px) {
   .ui {
     top: 2px;

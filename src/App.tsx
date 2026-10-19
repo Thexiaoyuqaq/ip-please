@@ -94,6 +94,15 @@ export default function App(): ReactElement {
             {t('common.fullscreen')}
           </button>
         )}
+        <a
+          href="https://github.com/Thexiaoyuqaq/ip-please.github.io"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="GitHub"
+          className="ui-link"
+        >
+          GitHub
+        </a>
       </div>
       <div id="rotate" className={rotateDismissed ? '' : 'show'}>
         <div>{t('common.rotateTitle')}</div>
