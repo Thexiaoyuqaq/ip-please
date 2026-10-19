@@ -77,7 +77,7 @@ export function chatDone(): void {
   if (!B.cut) return;
   B.cut = null;
   rt().sfx.ambient(true);
-  const spec: EntrantSpec = { person: 'JORJI_SUIT', voice: 110, docs: [], intro: [], primary: '', ok: [] };
+  const spec: EntrantSpec = { person: 'JORJI_SUIT', voice: 110, docs: [], intro: [], primary: '', ok: [], issues: [] };
   const ent = newEntrant(spec, true);
   ent.noJudge = true;
   ent.expr = 'sad';

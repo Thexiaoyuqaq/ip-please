@@ -10,7 +10,7 @@ export interface PersonMeta {
   walker: readonly [readonly number[], readonly number[]];
   scripted: boolean;
   fw: number;
-  extra?: readonly (readonly number[])[];
+  extra?: readonly (readonly [readonly number[], readonly number[]])[];
 }
 
 export type FontSize = 8 | 10 | 12;
