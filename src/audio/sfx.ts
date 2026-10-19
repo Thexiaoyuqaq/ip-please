@@ -68,7 +68,7 @@ export class Sfx {
     if (!ac) throw new Error('AudioContext is not initialized');
     const data = make ? make() : synth.MAKERS[name]();
     const buffer = ac.createBuffer(1, data.length, synth.SR);
-    buffer.copyToChannel(data, 0);
+    buffer.copyToChannel(data as Float32Array<ArrayBuffer>, 0);
     this.cache.set(name, buffer);
     return buffer;
   }

@@ -117,7 +117,7 @@ export function showIssue(issue: Issue): void {
   if (issue.all) I.all = true;
   sfx.play('discrepancy', 1, 0.03);
   for (const selected of I.sel) {
-    if (selected.xr) ent.found.add(selected.key);
+    if (selected.xr && selected.key) ent.found.add(selected.key);
   }
   if (/ac\.|rule\.pay/.test(JSON.stringify(issue.pairs ?? []))) S.tut.account = true;
   if (issue.fx && !ent.found.has(issue)) {
@@ -202,7 +202,7 @@ export function inspectClick(x: number, y: number): void {
     return;
   }
   if (I.sel.length < 2) return;
-  const issue = matchIssue(I.sel.map((selected) => selected.key));
+  const issue = matchIssue(I.sel.flatMap((selected) => (selected.key ? [selected.key] : [])));
   if (issue) showIssue(issue);
   else I.banner = { title: T('issue.noMatch.title'), sub: T('issue.noMatch.sub'), bad: false };
 }

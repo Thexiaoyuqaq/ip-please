@@ -1,6 +1,6 @@
 import { now } from '@/engine/clock';
 import { drawAddressCard } from '@/game/docs';
-import { getCtx, setCtx, easeOut, seg, W } from '@/render/canvas';
+import { getCtx, setCtx, easeOut, seg } from '@/render/canvas';
 import { bigText, txt } from '@/render/text';
 import { K } from '@/render/palette';
 import { resolveList, resolveRef, T } from '@/i18n/text';

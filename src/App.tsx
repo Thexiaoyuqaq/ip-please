@@ -60,7 +60,7 @@ export default function App(): ReactElement {
     const promise = request?.call(root);
     if (promise && typeof promise.then === 'function') {
       promise
-        .then(() => screen.orientation?.lock?.('landscape'))
+        .then(() => (screen.orientation as ScreenOrientation & { lock?: (o: string) => Promise<void> } | undefined)?.lock?.('landscape'))
         .catch(() => {});
     }
   };

@@ -13,9 +13,8 @@ import type { Speaker, Step, StepOptions } from './types';
 /** Build a sequence of steps from a localized string array. */
 export function steps(key: string, who: Speaker | Speaker[], options: (StepOptions | undefined)[] = []): Step[] {
   const length = resolveList(key).length;
-  const whoList = Array.isArray(who) ? who : null;
   return Array.from({ length }, (_, index) => ({
-    who: whoList ? (whoList[index] ?? whoList[whoList.length - 1]) : who,
+    who: Array.isArray(who) ? (who[index] ?? who[who.length - 1]) : who,
     text: { key, index },
     ...(options[index] ?? {}),
   }));

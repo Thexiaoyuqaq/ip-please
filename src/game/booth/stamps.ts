@@ -27,7 +27,7 @@ export function stampBtnBox(kind: Decision, tx: number): readonly [number, numbe
   return [bx, TRAY_Y0 + 8, bx + 64, TRAY_Y0 + 48];
 }
 
-export function stamp(kind: Decision): void {
+export function stamp(kind: keyof typeof MARK_XY): void {
   const sfx = rt().sfx;
   B.presses.push({ t: now, kind });
   sfx.play(`stamp_${kind}`, 1, 0.03);

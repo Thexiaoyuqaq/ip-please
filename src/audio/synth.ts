@@ -319,7 +319,7 @@ export function crowdFight(duration: number): Float32Array {
 
 export function bell(): Float32Array {
   const n = N(1.6);
-  let x = new Float32Array(n);
+  let x: Float32Array = new Float32Array(n);
   for (const [f, g] of [
     [880, 1],
     [1320, 0.5],
@@ -465,7 +465,7 @@ const bass = (m: number, duration: number): Float32Array =>
 
 function pad(chord: readonly number[], duration: number): Float32Array {
   const n = N(duration);
-  let x = new Float32Array(n);
+  let x: Float32Array = new Float32Array(n);
   for (const m of chord) x = add(x, square(mf(m - 12), n), 1 / chord.length);
   for (let i = 0; i < n; i++) x[i] *= Math.min(1, i / SR / 0.15);
   return filt(fade(x, 0.02, 0.2), 'lowpass', 900);
